@@ -1,0 +1,13 @@
+!!! 5
+%html{html_attrs('en-GB')}
+  %head
+    %title= @title
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=UTF-8'}/
+    %meta{:charset => 'UTF-8'}/
+                    
+  %body{:id => "#{@page_id}", :class => "#{@page_classes}"}
+  
+    = yield
+    
+    %p#license.section= "&copy; Conceptric 2009&#8212;#{Time.now.year}: All rights reserved."
+    

@@ -1,0 +1,7 @@
+*.db
+tmp/*
+.sass-cache/*
+.bundle
+vendor
+config
+Capfile

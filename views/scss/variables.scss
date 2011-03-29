@@ -1,0 +1,28 @@
+/* =ColorsVariables
+----------------------------------------------- */
+$color_conceptric: rgb( 39, 39, 195 );
+$color_light_base: rgb( 255, 255, 255 );
+$color_light_background: darken( $color_light_base, 5% );
+$color_light_text: $color_light_background;
+
+$color_dark_base: rgb(0, 0, 0);
+$color_dark_background: lighten( $color_dark_base, 10% );
+$color_dark_text: $color_dark_background;
+$color_visited: lighten( $color_dark_text, 10% );
+$color_focus: lighten( $color_dark_text, 20% );
+
+/* =TypographicVariables
+----------------------------------------------- */
+$font_size_base: 13px;
+$line_height_ratio: ( 24/13 );
+$line_height_single: round( $font_size_base * $line_height_ratio );
+
+/* =LayoutVariables
+----------------------------------------------- */
+$page_design_width: 960px;
+$columns: 16;
+$top_offset: $line_height_single * 2;
+$top_content_offset: ( $line_height_single * 6 ) + $top_offset;
+$column_space_single: 10px;
+$column_single_width: ( $page_design_width / $columns );
+$column_padding: ( $column_space_single / 2 );

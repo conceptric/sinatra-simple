@@ -4,10 +4,20 @@
     %title= @title
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=UTF-8'}/
     %meta{:charset => 'UTF-8'}/
+    %link{:rel => "stylesheet", 
+          :type=> "text/css", 
+          :href => "/stylesheets/styles.css", 
+          :media => "screen"}
                     
   %body{:id => "#{@page_id}", :class => "#{@page_classes}"}
   
-    = yield
-    
-    %p#license.section= "&copy; Conceptric 2009&#8212;#{Time.now.year}: All rights reserved."
-    
+  #container
+    #branding.section
+      #website_title.section
+        %a{:href => "/"} Sinatra Template
+
+    #content.section
+      = yield
+  
+    #footer
+      #license.section.unfloat= "&copy; Conceptric 2009&#8212;#{Time.now.year}: All rights reserved."

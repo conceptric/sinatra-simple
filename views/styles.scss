@@ -1,0 +1,113 @@
+/*
+Theme Name: A personal theme for Conceptric
+Theme URI: http://cyberstruction.co.uk/
+Description: The new corporate Conceptric theme with added Sass.
+Version: 2.0
+Author: James Whinfrey
+Author URI: http://conceptric.co.uk/
+*/
+/* =Code
+----------------------------------------------- */
+@import "scss/variables.scss";
+@import "scss/mixins.scss";
+
+/* =Global
+----------------------------------------------- */
+@import "scss/variables.scss";
+html {
+  background-color: $color_light_base; 
+}
+
+body {
+  font-family: 'Helvetica Neue', 'Microsoft Sans Serif', 'Bitstream Vera Sans', 'MS Trebuchet', Sans-Serif;
+  @include font_layout;
+  font-weight: normal;
+  background: transparent;
+  color: $color_dark_text;
+  @include colors_base_links;
+}
+  
+#container {
+  @include element_width_maximum;
+}
+
+/* =Headings
+----------------------------------------------- */
+h2, h3, h4, h5, h6, .nav h4 {
+  margin-bottom: $line_height_single; }
+
+h1 {
+  @include font_layout( ( $font_size_base * 2.15 ), 2); }
+
+h2, .nav h4 {
+  @include font_layout( ( $font_size_base * 1.75 ) ); }
+
+h3, .favourite_stuff li > a {
+  @include font_layout( ( $font_size_base * 1.39 ) ); }
+
+h4 {
+  @include font_layout( ( ( $font_size_base * 1.23 ) ) ); }
+
+h5 {
+  @include font_layout( ( ( $font_size_base * 1.077 ) ) ); }
+
+h6 {
+  font-style: italic;
+  font-weight: bold; }
+
+/* =Content
+----------------------------------------------- */
+p, ol, ul, dl, div.the_post_tags {
+  margin: $line_height_single 0px;
+  text-align: left; 
+}
+
+a, acronym, abbr {
+  border-bottom: 1px solid;
+  padding-bottom: 1px; 
+}
+
+acronym, abbr {
+  border-style: dashed;
+  cursor: help; 
+}
+  
+blockquote, q, cite, em {
+  font-style: italic; 
+}
+
+blockquote {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin: ( $line_height_single - 1 ) 0px; 
+}
+    
+strong, em {
+  font-weight: bold; 
+}
+
+code {
+  font-family: 'Courier New', 'Lucida Console', 'Nimbus Mono L', Monospace;
+  @include font_layout( $font_size_base, 0.5 );
+  &.terminal {
+    font-family: 'Courier New', 'Lucida Console', 'Nimbus Mono L', Monospace;
+    display: block;
+    white-space: pre;
+    @include font_layout( ( $font_size_base * 0.85 ), 0.5 ); 
+  } 
+}
+
+samp.stdout {
+  font-family: 'Courier New', 'Lucida Console', 'Nimbus Mono L', Monospace;
+  display: block;
+  white-space: pre;
+  white-space: pre-wrap; 
+  @include font_layout( ( $font_size_base * 0.85 ), 0.5 );
+}
+
+/* =Lists
+----------------------------------------------- */
+ul {
+  list-style-type: disc; 
+}
+

@@ -1,0 +1,122 @@
+/* =LayoutMixins
+----------------------------------------------- */
+@mixin element_width($number_of_columns: 1, $offset: ( 
+  ( $column_space_single * 2 ) + ( $column_padding * 2 ) )) {
+ width: ( $column_single_width * $number_of_columns ) - $offset;
+}
+
+@mixin element_height($number_of_lines: 1, $offset: 0) {
+ height: ( $line_height_single * $number_of_lines ) - $offset;
+}
+
+@mixin element_width_maximum {
+ width: $page_design_width; 
+ margin-right: auto;
+ margin-left: auto;
+ padding: $line_height_single $column_padding;
+}
+
+@mixin element_width_column($number_of_columns: 1) {
+ margin-right: $column_space_single;
+ margin-left: $column_space_single;
+ padding: $line_height_single $column_padding;
+ @include element_width( $number_of_columns ); 
+}
+
+/* =TypographicMixins
+----------------------------------------------- */
+@mixin font_layout($size: $font_size_base, $lines: 1) {
+  font-size: round( $size );
+  line-height: round( $font_size_base * $line_height_ratio ) * $lines;
+}
+
+@mixin font_underlined_link($lines: 1) {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  line-height: ( $line_height_single * $lines ) - 1px;
+}
+
+@mixin font_clean_link($lines: 1) {
+  text-decoration: none;
+  border-bottom: none;
+  padding-bottom: 0px;
+  line-height: $line_height_single * $lines;
+}
+
+/* =ColorsMixins
+----------------------------------------------- */
+// Base colourscheme for Conceptric
+@mixin colors_base {
+  background: $color_light_background;
+  color: $color_dark_text;
+  border-color: $color_dark_text;
+  @include colors_base_links;
+}
+
+// Contrasting dark colourscheme
+@mixin colors_contrast {
+  background: $color_dark_background;
+  color: $color_light_text;
+  border: none;
+  & a {
+    &:visited {
+      background-color: $color_dark_background;
+      border-color: complement( $color_visited ); }
+    &:hover, &:focus, &:active {
+      background-color: complement( $color_focus ); }
+  }
+}
+
+// Banner and branding elements colourscheme
+@mixin colors_branding {
+  background: $color_conceptric;
+  color: $color_light_text;
+  & a {
+    background-color: $color_conceptric;
+    color: $color_light_text;
+    border: none;
+  }
+}
+
+@mixin colors_base_links {
+  & a {
+    color: $color_dark_text;
+    border-color: $color_dark_text;
+    &:visited {
+      border-color: $color_visited;
+      color: $color_visited; }
+    &:hover, &:focus, &:active {
+      color: $color_light_text;
+      background-color: $color_focus;
+      border-color: $color_focus; }
+  }
+}
+
+@mixin colors_unchanging_links {
+  & a {
+    color: $color_dark_text;
+    border-color: none;
+    &:visited {
+      border-color: none;
+      color: $color_dark_text; }
+    &:hover, &:focus, &:active {
+      color: $color_dark_text;
+      background-color: transparent;
+      border-color: none; }
+  }
+}
+
+@mixin box_rounded_border {
+  $radius: round( $font_size_base / 2 );
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+  
+@mixin box_drop_shadow($horizontal: 0px, $vertical: 1px) {
+  $blur: round( $font_size_base / 4 );
+  box-shadow: $horizontal $vertical $blur $color_dark_base;
+  -webkit-box-shadow: $horizontal $vertical $blur $color_dark_base;
+  -moz-box-shadow: $horizontal $vertical $blur $color_dark_base;
+}

@@ -32,6 +32,17 @@ class BaseApplication < Sinatra::Base
   require File.join(root, 'models')
 
   # Add some new routes 
+
+  not_found do
+    @title = "It is not here"
+    haml :not_found
+  end
+    
+  get '/stylesheets/styles.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    scss :styles
+  end
+  
   get '/' do
     @title = "A New Application"
     haml :index

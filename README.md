@@ -11,7 +11,7 @@ It extends Sinatra::Base, so it can be used for prototyping standalone web appli
 * Stylesheets based on SCSS with some of my personal mixins
 * Dependencies managed with Bundler, so my Gemfile is included
 
-As an RVM user and fan, I've included a .rvmrc file in the project to set up Ruby Enterprise Edition and a default gemset.
+As an RVM user and fan, I've included a .rvmrc file in the project to set up Ruby Enterprise Edition, but building a gemset has been removed.
 
 Feel free to fork this template for your own purposes, but it comes with the obligatory disclaimer, no guarantees or support.
 

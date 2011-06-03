@@ -1,17 +1,18 @@
 source "http://rubygems.org"
-gem 'bundler', '~>1.0'
-gem 'rack', '~>1.2'
-gem 'sinatra', '~>1.2'
-gem 'haml', '~>3.0'
+gem 'bundler'
+gem 'rack'
+gem 'sinatra'
+gem 'haml'
+gem 'sass'
 
 group :test do
-  gem 'rspec', '~>2.5'
-  gem 'cucumber', '~>0.10'
-  gem 'cucumber-sinatra', '~>0.3'
-  gem 'capybara', '~>0.4'
+  gem 'rspec'
+  gem 'cucumber'
+  gem 'cucumber-sinatra'
+  gem 'capybara'
 end
 
 group :deployment do
-  gem 'capistrano', '~>2.5'
-  gem 'capistrano-ext', '~>1.2'
+  gem 'capistrano'
+  gem 'capistrano-ext'
 end
